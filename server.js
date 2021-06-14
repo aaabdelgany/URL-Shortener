@@ -50,6 +50,26 @@ app.post('/api/shorturl', async (req, res) => {
     res.json({ error: 'invalid url' });
   }
 });
+app.post('/api/shorturl/new', async (req, res) => {
+  const regex = new RegExp('https?://www.(w+).com');
+  if (regex.test(req.body.url)) {
+    const myUrl = await Url.findOne({ original_url: req.body.url });
+    if (myUrl.length === 1) {
+      res.json(myUrl);
+    } else {
+      const all = await Url.find({});
+      const newShortUrl = all.length + 1;
+      const newUrl = new Url({
+        original_url: req.body.url,
+        short_url: newShortUrl,
+      });
+      newUrl.save();
+      res.json({ original_url: req.body.url, short_url: newShortUrl });
+    }
+  } else {
+    res.json({ error: 'invalid url' });
+  }
+});
 app.get('/api/shorturl/:id', async (req, res) => {
   const shortUrl = Number(req.params.id);
   console.log(shortUrl);
