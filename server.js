@@ -47,7 +47,7 @@ app.post('/api/shorturl', async (req, res) => {
       res.json(newUrl);
     }
   } else {
-    res..json({ error: 'invalid url' });
+    res.json({ error: 'invalid url' });
   }
 });
 app.get('/api/shorturl/:id', async (req, res) => {
