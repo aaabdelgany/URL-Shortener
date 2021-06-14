@@ -31,11 +31,11 @@ app.get('/', function (req, res) {
 });
 
 app.post('/api/shorturl', async (req, res) => {
-  const regex = new RegExp('https?://www.');
+  const regex = new RegExp('https?://');
   console.log(req.body);
   if (regex.test(req.body.url)) {
     const myUrl = await Url.findOne({ original_url: req.body.url });
-    if (myUrl.length === 1) {
+    if (myUrl) {
       res.json(myUrl);
     } else {
       const all = await Url.find({});
