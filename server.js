@@ -32,6 +32,7 @@ app.get('/', function (req, res) {
 
 app.post('/api/shorturl', async (req, res) => {
   const regex = new RegExp('https?://www.(\\w+).com');
+  console.log(req.body.url);
   if (regex.test(req.body.url)) {
     const myUrl = await Url.findOne({ original_url: req.body.url });
     if (myUrl.length === 1) {
