@@ -32,7 +32,6 @@ app.get('/', function (req, res) {
 
 app.post('/api/shorturl', async (req, res) => {
   const regex = new RegExp('https?://');
-  console.log(req.body);
   if (regex.test(req.body.url)) {
     const myUrl = await Url.findOne({ original_url: req.body.url });
     if (myUrl) {
