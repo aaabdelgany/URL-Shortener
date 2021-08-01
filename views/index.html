@@ -16,6 +16,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
     />
+    <link rel="stylesheet" href="../public/style.css" />
     <style>
       .cell {
         border-style: solid;
@@ -39,21 +40,34 @@
         <div class="container is-offset-2 has-text-centered">
           <div class="columns">
             <div class="column is-6">
-              <form action="api/shorturl" method="POST">
-                <fieldset>
-                  <legend>Please enter a URL to get started!</legend>
-                  <label for="url_input">URL:</label>
-                  <input
-                    id="url_input"
-                    type="text"
-                    name="url"
-                    placeholder="https://google.com"
-                  />
-                  <input type="submit" value="POST URL" />
-                </fieldset>
-              </form>
+              <div class="card">
+                <header class="card-header">
+                  <p class="card-header-title">
+                    Please enter a URL to get started!
+                  </p>
+                </header>
+                <form action="api/shorturl" method="POST">
+                  <fieldset>
+                    <label class="label" for="url_input">URL:</label>
+                    <input
+                      class="input"
+                      id="url_input"
+                      type="text"
+                      name="url"
+                      placeholder="https://google.com"
+                    />
+                    <button
+                      class="button is-link is-light"
+                      type="submit"
+                      value="POST URL"
+                    >
+                      POST URL
+                    </button>
+                  </fieldset>
+                </form>
+              </div>
             </div>
-            <div class="column is-4">
+            <div class="column is-6">
               <div class="card">
                 <header class="card-header">
                   <p class="card-header-title">How to use the Microservice:</p>
