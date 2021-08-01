@@ -75,17 +75,53 @@
             </div>
           </div>
         </div>
-        <div class="column is-6 is-offset-3 has-text-centered">
-          <div class="card">
-            <header class="card-header">
-              <p class="card-header-title">Example Usage:</p>
-            </header>
-            <div class="card-content">
-              <a href="https://ancient-ocean-01763.herokuapp.com/api/shorturl/1"
-                >ancient-ocean-01763.herokuapp.com/api/shorturl/1</a
-              >
-              <p>will redirect to:</p>
-              <p>google.com</p>
+        <div class="container is-offset-3 has-text-centered">
+          <div class="columns">
+            <div class="column is-6 has-text-centered">
+              <div class="card">
+                <header class="card-header">
+                  <p class="card-header-title">Example Usage:</p>
+                </header>
+                <div class="card-content">
+                  <a
+                    href="https://ancient-ocean-01763.herokuapp.com/api/shorturl/1"
+                    >ancient-ocean-01763.herokuapp.com/api/shorturl/1</a
+                  >
+                  <p>will redirect to:</p>
+                  <p>google.com</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="column is-6">
+              <div class="card">
+                <header class="card-header">
+                  <p class="card-header-title">Sample Request(Python):</p>
+                </header>
+                <div class="card-content">
+                  <p><code>import requests</code></p>
+                  <p>
+                    <code>
+                      url =
+                      "https://ancient-ocean-01763.herokuapp.com/api/shorturl"</code
+                    >
+                  </p>
+                  <p><code>payload="{\"url\":\"https://google.com\"}"</code></p>
+                  <p>
+                    <code
+                      >headers = { 'Content-Type': 'application/json' }</code
+                    >
+                  </p>
+                  <p>
+                    <code
+                      >response = requests.request("POST", url, headers=headers,
+                      data=payload)</code
+                    >
+                  </p>
+
+                  <p><code> print(response.text)</code></p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
