@@ -37,7 +37,7 @@
     </section>
     <main>
       <section class="section is-small">
-        <div class="container is-offset-2 has-text-centered">
+        <div class="container is-offset-3 has-text-centered">
           <div class="columns">
             <div class="column is-6">
               <div class="card">
@@ -48,14 +48,17 @@
                 </header>
                 <form action="api/shorturl" method="POST">
                   <fieldset>
-                    <label class="label" for="url_input">URL:</label>
-                    <input
-                      class="input"
-                      id="url_input"
-                      type="text"
-                      name="url"
-                      placeholder="https://google.com"
-                    />
+                    <label class="label is-small" for="url_input">URL:</label>
+                    <div class="column is-10 is-offset-1">
+                      <input
+                        class="input is-rounded is-medium"
+                        id="url_input"
+                        type="text"
+                        name="url"
+                        placeholder="https://google.com"
+                      />
+                    </div>
+
                     <button
                       class="button is-link is-light"
                       type="submit"
@@ -82,7 +85,7 @@
             </div>
           </div>
         </div>
-        <div class="column is-offset-3 is-6 has-text-centered">
+        <div class="column is-6 is-offset-3 has-text-centered">
           <div class="card">
             <header class="card-header">
               <p class="card-header-title">Example Usage:</p>
