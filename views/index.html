@@ -2,31 +2,38 @@
 
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>URL Shortener</title>
-    <script src='main.js'></script>
-    <link rel="shortcut icon" href="../images/fav_icon.png" type="image/image/png">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script src="main.js"></script>
+    <link
+      rel="shortcut icon"
+      href="../images/fav_icon.png"
+      type="image/image/png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
     <style>
-        .cell{
-            border-style:solid;
-            border-width:1px;
-        }
-        .is-centered{
-            justify-content: center;
-        }
+      .cell {
+        border-style: solid;
+        border-width: 1px;
+      }
+      .is-centered {
+        justify-content: center;
+      }
     </style>
   </head>
 
   <body>
     <section class="hero is-primary">
       <div class="hero-body">
-          <p class="title">URL Shortener MicroService</p>
-          <p class="subtitle">Enter a URL to get a shortened link!</p>
+        <p class="title">URL Shortener MicroService</p>
+        <p class="subtitle">Enter a URL to get a shortened link!</p>
       </div>
-  </section>
+    </section>
     <main>
       <section class="section is-small">
         <div class="container is-offset-2 has-text-centered">
@@ -36,16 +43,26 @@
                 <fieldset>
                   <legend>Please enter a URL to get started!</legend>
                   <label for="url_input">URL:</label>
-                  <input id="url_input" type="text" name="url" placeholder="https://google.com" />
+                  <input
+                    id="url_input"
+                    type="text"
+                    name="url"
+                    placeholder="https://google.com"
+                  />
                   <input type="submit" value="POST URL" />
                 </fieldset>
               </form>
             </div>
             <div class="column is-4">
               <div class="card">
+                <header class="card-header">
+                  <p class="card-header-title">How to use the Microservice:</p>
+                </header>
                 <div class="card-content">
-                  How to use the Microservice:
-                  Enter a URL and the service will give you a JSON object that has a "short_url" field. Add the value of that field to the end of this domain and it will redirect you to your original URL!
+                  Enter a URL in the input field above and the service will give
+                  you a JSON object that has a "short_url" field. Add the value
+                  of that field to the end of this domain and it will redirect
+                  you to your original URL!
                 </div>
               </div>
             </div>
@@ -53,19 +70,18 @@
         </div>
         <div class="column is-offset-4 is-4 has-text-centered">
           <div class="card">
+            <header class="card-header">
+              <p class="card-header-title">Example Request:</p>
+            </header>
             <div class="card-content">
-              Example Request:
               <p>[this_project_url]/api/shorturl/1</p>
-              <p>Will Redirect to:</p>
+              <p>will Redirect to:</p>
               <p>google.com</p>
             </div>
-
           </div>
         </div>
-
       </section>
     </main>
-    <footer>
-    </footer>
+    <footer></footer>
   </body>
 </html>

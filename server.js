@@ -47,7 +47,9 @@ app.post('/api/shorturl', async (req, res) => {
       res.json({ original_url: req.body.url, short_url: newShortUrl });
     }
   } else {
-    res.json({ error: 'invalid url' });
+    res.json({
+      error: 'Invalid url. Please make sure to include http:// or https://',
+    });
   }
 });
 
