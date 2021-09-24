@@ -4,13 +4,13 @@ const cors = require('cors');
 const app = express();
 const mongoose = require('mongoose');
 const Url = require('./models/URL');
+
+const mongoURI =
+  process.env.NODE_ENV === 'dev'
+    ? process.env.DEV_MONGODB_URI
+    : process.env.MONGODB_URI;
 mongoose
-  .connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-    useCreateIndex: true,
-  })
+  .connect(mongoURI, {})
   .then(() => {
     console.log('Connected to MongoDB!');
   })
