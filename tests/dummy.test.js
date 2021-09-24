@@ -6,5 +6,5 @@ test('dummy', () => {
 test('fail', () => {
   const fail = 'fail';
 
-  expect(fail).toBe('Fail');
+  expect(fail).toBe('fail');
 });

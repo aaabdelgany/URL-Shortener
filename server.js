@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const Url = require('./models/URL');
 
 const mongoURI =
-  process.env.NODE_ENV === 'dev'
+  process.env.NODE_ENV === 'test'
     ? process.env.DEV_MONGODB_URI
     : process.env.MONGODB_URI;
 mongoose
@@ -73,3 +73,5 @@ app.get('/api/hello', function (req, res) {
 app.listen(port, function () {
   console.log(`Listening on port ${port}`);
 });
+
+module.exports = app;
